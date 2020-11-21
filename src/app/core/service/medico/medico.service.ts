@@ -12,6 +12,10 @@ export class MedicoService {
 
   constructor(private http: HttpClient) { }
 
+  allDoctores(): Observable<Medico[]> {
+    return this.http.get<Medico[]>(`${environment.url_api}medico/listar`);
+  }
+
   allDoctoresxEsp(cod_esp: string): Observable<Medico[]> {
     return this.http.get<Medico[]>(`${environment.url_api}medico/especialidad/${cod_esp}`);
   }

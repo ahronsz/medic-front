@@ -20,16 +20,16 @@ export class RegistrarComponent implements OnInit {
   constructor(
     private especialidadService: EspecialidadService,
     private medicoService: MedicoService,
-    private formBuilder: FormBuilder
+    //private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
-    this.builder();
+    //this.builder();
     this.listEspecialidad();
     this.listDoctorxEsp();
   }
 
-  private builder(): void {
+  /*private builder(): void {
     this.form = this.formBuilder.group({
       cod_pac: '',
       cod_mir: '',
@@ -37,7 +37,7 @@ export class RegistrarComponent implements OnInit {
       fecha: '',
       hora: ''
     });
-  }
+  }*/
 
   listEspecialidad(): void {
     this.especialidadService.allEspecialidades().subscribe(result => {
@@ -46,7 +46,7 @@ export class RegistrarComponent implements OnInit {
   }
 
   listDoctorxEsp(): void {
-    this.medicoService.allDoctoresxEsp('').subscribe(result => {
+    this.medicoService.allDoctores().subscribe(result => {
       this.medicos = result;
     });
   }
