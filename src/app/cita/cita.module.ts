@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { CitaRoutingModule } from './cita-routing.module';
 import { ListarComponent } from './listar/listar.component';
 import { VerComponent } from './ver/ver.component';
@@ -19,7 +21,9 @@ import { RegistrarComponent } from './registrar/registrar.component';
   imports: [
     CommonModule,
     CitaRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CitaModule { }

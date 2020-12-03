@@ -7,3 +7,21 @@ export interface Cita {
     fecha: string;
     hora: string;
 }
+
+export interface CitaGet {
+    cod_med: string;
+    cod_esp: string;
+    fecha: string;
+}
+
+export interface Hora {
+    horas: Array<string>;
+    horas_m: Array<string>;
+}
+
+export interface CitaDisponible {
+    cod_med: string;
+    cod_esp: string;
+    fecha: string;
+    hora: Hora;
+}

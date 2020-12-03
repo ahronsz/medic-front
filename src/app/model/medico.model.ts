@@ -10,4 +10,5 @@ export interface Medico {
     sexo: string;
     foto: string;
     fecha_naci: string;
+    edad: number;
 }
