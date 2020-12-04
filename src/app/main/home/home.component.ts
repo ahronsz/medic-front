@@ -12,4 +12,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ira_registrar(event: Event): void {
+    console.log('HOLA');
+  }
+
 }
