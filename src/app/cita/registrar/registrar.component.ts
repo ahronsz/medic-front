@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 import { Especialidad } from '../../model/especialidad.model';
@@ -7,6 +7,7 @@ import { EspecialidadService } from '../../core/service/especialidad/especialida
 import { MedicoService } from '../../core/service/medico/medico.service';
 import { Cita, CitaGet, CitaDisponible } from 'src/app/model/cita.model';
 import { CitaService } from 'src/app/core/service/cita/cita.service';
+import { MatDatepicker } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-registrar',
@@ -15,6 +16,7 @@ import { CitaService } from 'src/app/core/service/cita/cita.service';
 })
 export class RegistrarComponent implements OnInit {
 
+  @ViewChild(MatDatepicker) datepicker: MatDatepicker<Date>;
   especialidades: Especialidad[];
   medicos: Medico[];
   citaDisponible: CitaDisponible;
@@ -53,7 +55,7 @@ export class RegistrarComponent implements OnInit {
   }
 
   listMedicoxEsp(): void {
-    this.medicoService.allMedicosxEsp(this.form.get('especialidad').value).subscribe(result => {
+    this.medicoService.allMedicosxEsp(this.form.get('especialidad').value.cod_esp).subscribe(result => {
       this.medicos = result;
       });
   }

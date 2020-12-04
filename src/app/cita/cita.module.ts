@@ -10,6 +10,10 @@ import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from '../shared/shared.module';
 import { RegistrarComponent } from './registrar/registrar.component';
 
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
+
 @NgModule({
   declarations: [
     ListarComponent,
@@ -23,7 +27,9 @@ import { RegistrarComponent } from './registrar/registrar.component';
     CitaRoutingModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class CitaModule { }
